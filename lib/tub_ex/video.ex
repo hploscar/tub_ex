@@ -39,7 +39,7 @@ defmodule TubEx.Video do
     opts = [
       key: TubEx.api_key,
       id: video_id,
-      part: "snippet",
+      part: "contentDetails,statistics,recordingDetails",
     ]
 
     case api_request("/videos", opts) do

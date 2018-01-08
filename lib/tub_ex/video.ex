@@ -34,12 +34,12 @@ defmodule TubEx.Video do
       iex> TubEx.Video.get("_J4QPz52Sfo")
       { :ok, %TubEx.Video{} }
   """
-  @spec get(charlist) :: { atom, TubEx.Video.t  }
-  def get(video_id) do
+  # @spec get(charlist) :: { atom, TubEx.Video.t  }
+  def get(video_id, part) do
     opts = [
       key: TubEx.api_key,
       id: video_id,
-      part: "contentDetails,statistics,recordingDetails",
+      part: part
     ]
 
     case api_request("/videos", opts) do
